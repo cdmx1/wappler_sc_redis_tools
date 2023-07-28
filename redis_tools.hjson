@@ -1,0 +1,145 @@
+[
+  {
+    "type": "redis_insert",
+    "module": "redis_insert",
+    "action": "redis_insert",
+    "groupTitle": "Redis Tools",
+    "groupIcon": "fas fa-lg fa-database",
+    "title": "Insert Data",
+    "icon": "fas fa-lg fa-upload",
+    "dataPickObject": true,
+    "usedModules": {
+      "node": {
+        redis: "^4.6.6"
+      }
+    },
+    "properties": [
+      {
+        "group": "Data",
+        "variables": [
+          {
+            "name": "actionName",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Key",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Key to insert into Redis"
+          },
+          {
+            "name": "data",
+            "optionName": "data",
+            "title": "Data",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Data to insert into Redis"
+          }
+        ]
+      },
+      {
+        group: 'Output',
+        variables: [
+          { name: 'output', optionName: 'output', title: 'Output', initValue: true, defaultValue: false, type: 'boolean'}
+        ]
+      }
+    ]
+  },
+  {
+    "type": "redis_query",
+    "module": "redis_query",
+    "action": "redis_query",
+    "groupTitle": "Redis Tools",
+    "groupIcon": "fas fa-lg fa-database",
+    "title": "Fetch Data",
+    "icon": "fas fa-lg fa-download",
+    "dataPickObject": true,
+    "usedModules": {
+      "node": {
+        redis: "^4.6.6"
+      }
+    },
+    "properties": [
+      {
+        "group": "Data",
+        "variables": [
+          {
+            "name": "actionName",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Key",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Key to insert into Redis"
+          }
+        ]
+      },
+      {
+        group: 'Output',
+        variables: [
+          { name: 'output', optionName: 'output', title: 'Output', initValue: true, defaultValue: false, type: 'boolean'}
+        ]
+      }
+    ]
+  },
+  {
+    "type": "redis_ping",
+    "module": "redis_ping",
+    "action": "redis_ping",
+    "groupTitle": "Redis Tools",
+    "groupIcon": "fas fa-lg fa-database",
+    "title": "Check Redis",
+    "icon": "fas fa-lg fa-heartbeat",
+    "dataPickObject": true,
+    "usedModules": {
+      "node": {
+        redis: "^4.6.6"
+      }
+    },
+    "properties": [
+      {
+        "group": "Data",
+        "variables": [
+          {
+            "name": "actionName",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "timeout",
+            "optionName": "timeout",
+            "title": "Timeout",
+            "type": "number",
+            "required": true,
+            "help": "Timeout in milliseconds"
+          }
+        ]
+      },
+      {
+        group: 'Output',
+        variables: [
+          { name: 'output', optionName: 'output', title: 'Output', initValue: true, defaultValue: false, type: 'boolean'}
+        ]
+      }
+    ]
+  }
+]
