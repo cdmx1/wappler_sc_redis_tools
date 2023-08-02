@@ -130,6 +130,7 @@
             "title": "Timeout",
             "type": "number",
             "required": true,
+            "defaultValue": 5000,
             "help": "Timeout in milliseconds"
           }
         ]
