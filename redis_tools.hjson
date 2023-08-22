@@ -1,7 +1,7 @@
 [
   {
     "type": "redis_insert",
-    "module": "redis_insert",
+    "module": "redis_tools",
     "action": "redis_insert",
     "groupTitle": "Redis Tools",
     "groupIcon": "fas fa-lg fa-database",
@@ -55,7 +55,7 @@
   },
   {
     "type": "redis_query",
-    "module": "redis_query",
+    "module": "redis_tools",
     "action": "redis_query",
     "groupTitle": "Redis Tools",
     "groupIcon": "fas fa-lg fa-database",
@@ -100,7 +100,7 @@
   },
   {
     "type": "redis_ping",
-    "module": "redis_ping",
+    "module": "redis_tools",
     "action": "redis_ping",
     "groupTitle": "Redis Tools",
     "groupIcon": "fas fa-lg fa-database",
@@ -130,11 +130,151 @@
             "title": "Timeout",
             "type": "number",
             "required": true,
-            "defaultValue": 5000,
             "help": "Timeout in milliseconds"
           }
         ]
       },
+      {
+        group: 'Output',
+        variables: [
+          { name: 'output', optionName: 'output', title: 'Output', initValue: true, defaultValue: false, type: 'boolean'}
+        ]
+      }
+    ]
+  },
+  {
+    "type": "redis_log_insert",
+    "module": "redis_tools",
+    "action": "redis_log_insert",
+    "groupTitle": "Redis Tools",
+    "groupIcon": "fas fa-lg fa-database",
+    "title" : 'Redis Insert Log - @@var(name)@@',
+    "icon": "fas fa-lg fa-save",
+    "dataPickObject": true,
+    "usedModules": {
+      "node": {
+        redis: "^4.6.6"
+      }
+    },
+    "properties": [
+      {
+        "group": "Data",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Key",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Key to insert into Redis"
+          }
+        ]
+      },
+      { "group": "Log Data",
+        "variables": [
+        {
+            "name": "timestamp",
+            "optionName": "timestamp",
+            "title": "Timestamp",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Timestamp, ex: NOW_UTC,etc"
+          },
+          {
+            "name": "log_level",
+            "optionName": "log_level",
+            "title": "Log Level",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "The log level"
+          },
+          {
+            "name": "id",
+            "optionName": "id",
+            "title": "ID",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "The ID for grouping events"
+          },
+          {
+            "name": "event",
+            "optionName": "event",
+            "title": "Event",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Event Description"
+          },
+          {
+            "name": "type",
+            "optionName": "type",
+            "title": "Type",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Type or Action Name of the event"
+          },
+          {
+            "name": "user_id",
+            "optionName": "user_id",
+            "title": "User ID",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "User ID from Provider"
+          },
+          {
+            "name": "message",
+            "optionName": "message",
+            "title": "Message",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "The log message"
+          },
+          {
+            "name": "domain",
+            "optionName": "domain",
+            "title": "Domain",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "Domain Name, ex: site.example.com etc"
+          },
+          {
+            "name": "system",
+            "optionName": "system",
+            "title": "System",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true,
+            "help": "System Type, ex: nps, etc"
+          },
+          {
+            "name": "context",
+            "optionName": "context",
+            "title": "Message Context",
+            "type": "text",
+            "required": false,
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "help": "Additional details as a JSON object"
+          }
+        ]
+      }
       {
         group: 'Output',
         variables: [
