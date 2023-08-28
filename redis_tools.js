@@ -54,7 +54,8 @@ exports.redis_query = async function (options) {
 
 
 exports.redis_ping = async function (options) {
-  const redis = getRedisInstance(options.db);
+  const db = process.env.REDIS_DB || 0
+  const redis = getRedisInstance(db);
   const timeout = this.parse(options.timeout) || 5000; // Default timeout: 5 seconds
   if (!redis) {
     throw new Error('Redis client is not available.');
@@ -73,7 +74,8 @@ exports.redis_ping = async function (options) {
   }
 };
 exports.redis_insert = async function (options) {
-  const redis = getRedisInstance(options.db);
+  const db = process.env.REDIS_DB || 0
+  const redis = getRedisInstance(db);
   if (!redis) {
       throw new Error('Redis client is not available.');
     }
@@ -89,7 +91,8 @@ exports.redis_insert = async function (options) {
   });
 }
 exports.redis_log_insert = async function (options) {
-  const redis = getRedisInstance(options.db);
+  const db = process.env.REDIS_DB || 0
+  const redis = getRedisInstance(db);
   if (!redis) {
     throw new Error('Redis client is not available.');
   }
