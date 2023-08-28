@@ -30,7 +30,8 @@ function getRedisInstance(db) {
   }
 
 exports.redis_query = async function (options) {
-  const redis = getRedisInstance(options.db);
+  const db = process.env.REDIS_DB || 0
+  const redis = getRedisInstance(db);
   try {
     if (!redis) {
       throw new Error('Redis client is not available.');
@@ -39,7 +40,7 @@ exports.redis_query = async function (options) {
     if (!key) {
       throw new Error('Invalid key provided.');
     }
-    const output = await redisClient.get(key);
+    const output = await redis.get(key);
     if (typeof output === 'string') {
       const parsedOutput = JSON.parse(output);
       return parsedOutput;
