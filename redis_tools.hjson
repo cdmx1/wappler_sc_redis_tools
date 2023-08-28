@@ -10,7 +10,8 @@
     "dataPickObject": true,
     "usedModules": {
       "node": {
-        redis: "^4.6.6"
+        redis: "^4.6.6",
+        ioredis: "^5.3.2"
       }
     },
     "properties": [
@@ -64,7 +65,8 @@
     "dataPickObject": true,
     "usedModules": {
       "node": {
-        redis: "^4.6.6"
+        redis: "^4.6.6",
+        ioredis: "^5.3.2"
       }
     },
     "properties": [
@@ -110,6 +112,7 @@
     "usedModules": {
       "node": {
         redis: "^4.6.6"
+        ioredis: "^5.3.2"
       }
     },
     "properties": [
@@ -153,7 +156,8 @@
     "dataPickObject": true,
     "usedModules": {
       "node": {
-        redis: "^4.6.6"
+        redis: "^4.6.6",
+        ioredis: "^5.3.2"
       }
     },
     "properties": [
