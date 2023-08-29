@@ -2,7 +2,7 @@
 
 # Redis Tools
 
-![Redis Tools Icon](https://raw.githubusercontent.com/fontawesome/fontawesome/master/svgs/solid/database.svg)
+![Redis Tools]
 
 This repository contains a set of Redis-related tools for various operations, including data insertion, data retrieval, checking the Redis server's status, and inserting log data into Redis. These tools are designed to be used in Node.js applications.
 
@@ -15,7 +15,7 @@ This repository contains a set of Redis-related tools for various operations, in
 
 ## Redis Insert Data
 
-![Redis Insert Data Icon](https://raw.githubusercontent.com/fontawesome/fontawesome/master/svgs/solid/upload.svg)
+<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/database-solid.svg" width="30" height="30" alt="Redis Insert Data Icon">
 
 ### Description
 
@@ -32,8 +32,7 @@ This tool allows you to insert data into a Redis database.
 - **Output**: A boolean indicating the success of the operation.
 
 ## Redis Fetch Data
-
-![Redis Fetch Data Icon](https://raw.githubusercontent.com/fontawesome/fontawesome/master/svgs/solid/download.svg)
+<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/download-solid.svg" width="30" height="30" alt="Redis Insert Data Icon">
 
 ### Description
 
@@ -50,7 +49,7 @@ This tool allows you to fetch data from a Redis database.
 
 ## Check Redis
 
-![Check Redis Icon](https://raw.githubusercontent.com/fontawesome/fontawesome/master/svgs/solid/heartbeat.svg)
+<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/heartbeat-solid.svg" width="30" height="30" alt="Check Redis Icon">
 
 ### Description
 
@@ -67,7 +66,7 @@ This tool allows you to check the status of a Redis server.
 
 ## Redis Insert Log
 
-![Redis Insert Log Icon](https://raw.githubusercontent.com/fontawesome/fontawesome/master/svgs/solid/save.svg)
+<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/save-solid.svg" width="30" height="30" alt="Redis Insert Log Icon">
 
 ### Description
 
