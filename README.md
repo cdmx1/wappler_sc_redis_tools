@@ -1,8 +1,6 @@
 #### Created and Maintained by Roney Dsilva
 
-# Redis Tools
-
-![Redis Tools]
+# Redis Tools <img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/database-solid.svg" width="30" height="30" alt="Redis Tools">
 
 This repository contains a set of Redis-related tools for various operations, including data insertion, data retrieval, checking the Redis server's status, and inserting log data into Redis. These tools are designed to be used in Node.js applications.
 
@@ -13,9 +11,7 @@ This repository contains a set of Redis-related tools for various operations, in
 - [Check Redis](#check-redis)
 - [Redis Insert Log](#redis-insert-log)
 
-## Redis Insert Data
-
-<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/database-solid.svg" width="30" height="30" alt="Redis Insert Data Icon">
+## Redis Insert Data <img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/upload-solid.svg" width="30" height="30" alt="Redis Insert Data Icon">
 
 ### Description
 
@@ -31,8 +27,7 @@ This tool allows you to insert data into a Redis database.
 
 - **Output**: A boolean indicating the success of the operation.
 
-## Redis Fetch Data
-<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/download-solid.svg" width="30" height="30" alt="Redis Insert Data Icon">
+## Redis Fetch Data <img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/download-solid.svg" width="30" height="30" alt="Redis Insert Data Icon">
 
 ### Description
 
@@ -47,9 +42,7 @@ This tool allows you to fetch data from a Redis database.
 
 - **Output**: The retrieved data from Redis.
 
-## Check Redis
-
-<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/heartbeat-solid.svg" width="30" height="30" alt="Check Redis Icon">
+## Check Redis <img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/heartbeat-solid.svg" width="30" height="30" alt="Check Redis Icon">
 
 ### Description
 
@@ -64,9 +57,7 @@ This tool allows you to check the status of a Redis server.
 
 - **Output**: A boolean indicating the availability of the Redis server.
 
-## Redis Insert Log
-
-<img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/save-solid.svg" width="30" height="30" alt="Redis Insert Log Icon">
+## Redis Insert Log <img src="https://github.com/seanyeh/fontawesome-svgs/raw/master/svg/save-solid.svg" width="30" height="30" alt="Redis Insert Log Icon">
 
 ### Description
 
