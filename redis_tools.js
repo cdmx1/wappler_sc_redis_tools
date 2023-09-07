@@ -4,34 +4,23 @@ const path = require("path");
 const { toSystemPath } = require("../../../lib/core/path");
 const ioredis = require("ioredis");
 
-function getRedisInstance(db) {
-    return new ioredis({
-      port:
-        process.env.REDIS_PORT ||
-        (global.redisClient ? global.redisClient.options.port : 6379),
-      host:
-        process.env.REDIS_HOST ||
-        (global.redisClient
-          ? global.redisClient.options.host
-            ? global.redisClient.options.host
-            : global.redisClient.options.socket.host
-          : "localhost"),
-      db: db !== undefined ? db : (process.env.REDIS_DB || 0),
-      password:
-        process.env.REDIS_PASSWORD ||
-        (global.redisClient ? global.redisClient.options.password : undefined),
-      username:
-        process.env.REDIS_USER ||
-        (global.redisClient ? global.redisClient.options.user : undefined),
-      tls:
-        process.env.REDIS_TLS ||
-        (global.redisClient ? global.redisClient.options.tls : undefined),
-    });
-  }
+// Initialize a global Redis client if it doesn't exist
+let redis;
+
+if (process.env.REDIS_HOST) {
+  redis = new ioredis({
+    port: process.env.REDIS_PORT || 6379,
+    host: process.env.REDIS_HOST,
+    db: process.env.REDIS_DB || 0,
+    password: process.env.REDIS_PASSWORD || undefined,
+    username: process.env.REDIS_USER || undefined,
+    tls: process.env.REDIS_TLS || undefined,
+  });
+} else {
+  redis = global.redisClient;
+}
 
 exports.redis_query = async function (options) {
-  const db = process.env.REDIS_DB || 0
-  const redis = getRedisInstance(db);
   try {
     if (!redis) {
       throw new Error('Redis client is not available.');
@@ -54,8 +43,6 @@ exports.redis_query = async function (options) {
 
 
 exports.redis_ping = async function (options) {
-  const db = process.env.REDIS_DB || 0
-  const redis = getRedisInstance(db);
   const timeout = this.parse(options.timeout) || 5000; // Default timeout: 5 seconds
   if (!redis) {
     throw new Error('Redis client is not available.');
@@ -73,9 +60,8 @@ exports.redis_ping = async function (options) {
     throw error;
   }
 };
+
 exports.redis_insert = async function (options) {
-  const db = process.env.REDIS_DB || 0
-  const redis = getRedisInstance(db);
   if (!redis) {
       throw new Error('Redis client is not available.');
     }
@@ -91,13 +77,10 @@ exports.redis_insert = async function (options) {
   });
 }
 exports.redis_log_insert = async function (options) {
-  const db = process.env.REDIS_DB || 0
-  const redis = getRedisInstance(db);
   if (!redis) {
     throw new Error('Redis client is not available.');
   }
-  
-  const logData = {
+    const logData = {
     ts: this.parse(options.timestamp),
     level: this.parse(options.log_level),
     e_event: this.parse(options.event),
