@@ -97,7 +97,7 @@ exports.redis_log_insert = async function (options) {
   const jsonString = JSON.stringify(logData);
   
   // Push the JSON data onto a Redis list
-  await redis.rpush(options.key, jsonString, (error, result) => {
+  await redis.rpush(this.parse(options.key), jsonString, (error, result) => {
     if (error) {
       console.error('Error pushing data to Redis list:', error);
     }
