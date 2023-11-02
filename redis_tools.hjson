@@ -277,6 +277,15 @@
             "help": "Session ID"
           },
           {
+            "name": "transaction_id",
+            "optionName": "transaction_id",
+            "title": "Transaction ID",
+            "type": "text",
+            "required": false,
+            "serverDataBindings": true,
+            "help": "Transaction ID (optional)"
+          },
+          {
             "name": "context",
             "optionName": "context",
             "title": "Message Context",

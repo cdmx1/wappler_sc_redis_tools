@@ -84,13 +84,14 @@ exports.redis_log_insert = async function (options) {
     ts: this.parse(options.timestamp),
     level: this.parse(options.log_level),
     e_event: this.parse(options.event),
-    e_id: this.parse(options.id) ? this.parse(options.id) : "",
+    e_id: this.parse(options.id),
     e_type: this.parse(options.type),
     uid: this.parse(options.user_id),
     msg: this.parse(options.message),
     domain: this.parse(options.domain),
     sys: this.parse(options.system),
     sess_id: this.parse(options.session_id),
+    t_id: this.parse(options.transaction_id) ? this.parse(options.transaction_id) : "",
     aux: typeof this.parse(options.context) === 'object' ? this.parse(options.context) : { data: this.parse(options.context) },
   };
 
