@@ -301,6 +301,7 @@
             "title": "Is Note?",
             "type": "text",
             "defaultValue": "",
+            "serverDataBindings": true,
             "help": "Entry to be considered as note."
           }
         ]
