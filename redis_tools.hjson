@@ -298,9 +298,9 @@
           {
             "name": "is_note",
             "optionName": "is_note",
-            "title": "Is Node?",
-            "type": "boolean",
-            "defaultValue": false,
+            "title": "Is Note?",
+            "type": "text",
+            "defaultValue": "",
             "help": "Entry to be considered as note."
           }
         ]
