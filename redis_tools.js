@@ -93,6 +93,7 @@ exports.redis_log_insert = async function (options) {
     sess_id: this.parse(options.session_id),
     t_id: this.parse(options.transaction_id) ? this.parse(options.transaction_id) : "",
     aux: typeof this.parse(options.context) === 'object' ? this.parse(options.context) : { data: this.parse(options.context) },
+    is_note: this.parse(options.is_note) ? this.parse(options.is_note) : ""
   };
 
   const jsonString = JSON.stringify(logData);

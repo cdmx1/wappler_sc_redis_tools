@@ -294,6 +294,14 @@
             "defaultValue": "",
             "serverDataBindings": true,
             "help": "Additional details as a JSON object"
+          },
+          {
+            "name": "is_note",
+            "optionName": "is_note",
+            "title": "Is Node?",
+            "type": "boolean",
+            "defaultValue": false,
+            "help": "Entry to be considered as note."
           }
         ]
       }
