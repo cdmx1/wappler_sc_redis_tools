@@ -161,6 +161,17 @@ test("redis_log_insert ignores an invalid PII config (missing arrays)", async ()
   assert.deepEqual(lastLogEntry(redis, LOG_KEY).aux, {});
 });
 
+test("redis_log_insert returns { success: true }", async () => {
+  const redis = createFakeRedis();
+  const mod = loadModule({ redisClient: redis });
+
+  const result = await mod.redis_log_insert.call(makeContext(), {
+    message: "x",
+  });
+
+  assert.deepEqual(result, { success: true });
+});
+
 test("redis_log_insert throws when no Redis client is available", async () => {
   const mod = loadModule({ redisClient: undefined });
 

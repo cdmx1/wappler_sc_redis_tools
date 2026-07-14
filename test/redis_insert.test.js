@@ -22,6 +22,18 @@ test("redis_insert stores the JSON-stringified data under the key", async () => 
   );
 });
 
+test("redis_insert returns { success: true }", async () => {
+  const redis = createFakeRedis();
+  const mod = loadModule({ redisClient: redis });
+
+  const result = await mod.redis_insert.call(makeContext(), {
+    key: "k",
+    data: { a: 1 },
+  });
+
+  assert.deepEqual(result, { success: true });
+});
+
 test("redis_insert stringifies primitive data too", async () => {
   const redis = createFakeRedis();
   const mod = loadModule({ redisClient: redis });

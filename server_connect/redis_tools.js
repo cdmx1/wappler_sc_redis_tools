@@ -74,6 +74,7 @@ exports.redis_insert = async function (options) {
       console.error('Error setting JSON array data:', error);
     }
   });
+  return { success: true };
 }
 
 exports.redis_delete = async function (options) {
@@ -247,4 +248,5 @@ exports.redis_log_insert = async function (options) {
       console.error('Error pushing data to Redis list:', error);
     }
   });
+  return { success: true };
 };

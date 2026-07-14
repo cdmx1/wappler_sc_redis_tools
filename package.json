@@ -1,6 +1,6 @@
 {
   "name": "@cdmx/wappler_sc_redis_tools",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This SC Module provides a set of Redis-related tools for various operations, including data insertion, data retrieval, checking the Redis server's status, and inserting log data into Redis. These tools are designed to be used in Node.js applications and are optimized for robust error handling and clear parameter validation.",
   "keywords": [
     "wappler redis tools server connect",
@@ -20,3 +20,4 @@
     "ioredis": "^5.3.2"
   }
 }
+
